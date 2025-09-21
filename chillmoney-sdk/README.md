@@ -28,6 +28,10 @@ const result = await sdk.transferUSDCWithSmartWallet({
   userAddress: '0x5B078e081DA6b8F31b60EED13959f3B6Cf0C8c73',
   privateKey: '0x677f33...'
 });
+
+console.log('Transfer completed!');
+console.log(`Burn TX: ${result.burnTxHash}`);
+console.log(`Mint TX: ${result.mintTxHash}`);
 ```
 
 ## ✨ Why ChillMoney SDK?
@@ -69,13 +73,21 @@ npm install chillmoney-avax-sdk
 yarn add chillmoney-avax-sdk
 ```
 
-### Local Development
+### PNPM
 ```bash
-# Install from local directory
-npm install file:../chillmoney-sdk
+pnpm add chillmoney-avax-sdk
+```
 
-# Or copy the dist folder
-cp -r chillmoney-sdk/dist ./node_modules/chillmoney-avax-sdk/
+### Import the SDK
+```javascript
+// CommonJS
+const { ChillMoneySDK } = require('chillmoney-avax-sdk');
+
+// ES Modules
+import { ChillMoneySDK } from 'chillmoney-avax-sdk';
+
+// TypeScript
+import { ChillMoneySDK, TransferParams, TransferResult } from 'chillmoney-avax-sdk';
 ```
 
 ## 🚀 Basic Usage
@@ -551,9 +563,8 @@ MIT License - see [LICENSE](LICENSE) file for details.
 
 ## 📞 Support
 
-- **Issues:** [GitHub Issues](https://github.com/chillmoney/chillmoney-avax-sdk/issues)
-- **Discord:** [ChillMoney Discord](https://discord.gg/chillmoney)
-- **Email:** support@chillmoney.com
+- **Issues:** [GitHub Issues](https://github.com/cadalt0/chillmoney-avax-sdk/issues)
+- **Documentation:** [Full API docs](https://github.com/cadalt0/chillmoney-avax-sdk#readme)
 
 ## 🎉 Acknowledgments
 
